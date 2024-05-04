@@ -1,0 +1,12 @@
+[Unit]
+Description=QEI Bluetooth setup service
+After=qei-wifi.service
+Before=bluetooth.target
+
+[Service]
+Type=forking
+ExecStart=/etc/bluetooth/qei-bt start
+ExecStop=/etc/bluetooth/qei-bt stop
+
+[Install]
+WantedBy=multi-user.target
